@@ -14,7 +14,8 @@ also enable http traffic internally between NGINX and Qlik Sense.
 
 Follow these steps
  - Log into Qlik Sense QMC, Proxies settings on https://localhost/qmc/proxies
- - Edit the "Ports" section of the page like this:
+ - Edit the Central Proxy
+ - Go to "Ports" section of the page and change it like this:
  <img src="https://github.com/ChristofSchwarz/pics/raw/master/nginx_qmc.png"/>
  - Download nginx Stable Version for Windows from http://nginx.org/en/download.html
  - Extract all files into a new folder e.g. `C:\nginx`
@@ -68,5 +69,7 @@ Note: It is not necessary to introduce a separate Virtual Proxy to have a main p
 NGINX is able to secure certain paths for which it is proxy. We would like to expose Qlik's QPS API under route /api/qps but 
 use at least a basic authentication with username+password. See https://docs.nginx.com/nginx/admin-guide/security-controls/configuring-http-basic-authentication/
 
-The 
-https://www.web2generators.com/apache-tools/htpasswd-generator
+Copy the [userpasswords.txt](conf/userpasswords.txt) file to your `C:\nginx\conf` folder. It contains already one user "api1" + 
+password "Qlik1234" which you should change to another combination. You can create line entries using the [Online htpassword Generator](https://www.web2generators.com/apache-tools/htpasswd-generator)
+
+
