@@ -7,7 +7,7 @@ We will use it "in front of" our Windows Qlik Sense Server to expose other servi
 Sense LDAP Login https://github.com/ChristofSchwarz/qsefw_ldap_login or Qlik's QPS API), which typically run on other ports 
 than 443, as a route.
 
-![screenshot](https://github.com/ChristofSchwarz/pics/raw/master/nginx.png)
+<img src="https://github.com/ChristofSchwarz/pics/raw/master/nginx.png" width="400"/>
 
 By default, port 443 is taken by Qlik Sense Proxy Service already, so we have to move it to another port. We can also enable 
 http traffic internally between NGINX and Qlik Sense.
