@@ -81,9 +81,11 @@ password "Qlik1234" which you should change to another combination. You can crea
 
 ### Example: Request Ticket for User using route /api/qps
 
-Here we are using the route and we post the Basic Authentication encoded as Base64 Bit ... to get the encoded combination
-for your apiuser and password, open for example the Browser Console with F12 and type `btoa("api1:Qlik1234")` .. you will get 
-`YXBpMTpRbGlrMTIzNA==`. 
+Here we are using the route and we post the Basic Authentication encoded as Base64 Bit 
+ - to get the Base64 encoded combination for your apiuser and password (which you set up in userpasswords.txt file before) 
+ - try https://www.base64encode.org/ and enter "api1:Qlik1234" (change accordingly)
+ - open Browser Console with F12 and type the JavaScript function `btoa("api1:Qlik1234")` (change accordingly)
+ - you will get a string like `YXBpMTpRbGlrMTIzNA==` 
 
 The simpliest call to QPS API is a GET "about"
 ```
