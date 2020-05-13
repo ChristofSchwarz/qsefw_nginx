@@ -17,12 +17,14 @@ Follow these steps
  - Edit the Central Proxy
  - Go to "Ports" section of the page and change it like this:
  <img src="https://github.com/ChristofSchwarz/pics/raw/master/nginx_qmc.png"/>
+ 
  - Download nginx Stable Version for Windows from http://nginx.org/en/download.html
  - Extract all files into a new folder e.g. `C:\nginx`
  - Download the [/conf/nginx.conf](https://raw.githubusercontent.com/ChristofSchwarz/qsefw_nginx/master/conf/nginx.conf) file and overwrite the default file in your local installation on `C:\nginx\conf\nginx.conf`
 
-Note: after that port change in the QMC, you can (unless NGINX is installed later) no more reach the QMC or Hub
-under https://localhost/ but either under https://localhost:444/ or http://localhost
+| Note: after that port change in the QMC, you can (unless NGINX is installed later) no more reach the QMC or Hub
+under https://localhost/ but either under https://localhost:444/ or http://localhost |
+| ---------------------------------------------------------------------------------- |
 
 ## Run NGINX from Command Prompt
 
