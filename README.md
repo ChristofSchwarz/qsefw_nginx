@@ -16,7 +16,7 @@ Follow these steps
  
  - Download nginx Stable Version for Windows from http://nginx.org/en/download.html
  - Extract all files into a new folder e.g. `C:\nginx`
- - Download the [/conf/nginx.conf](conf/nginx.conf) file and overwrite the default file in your local installation on `C:\nginx\conf\nginx.conf`
+ - Download the [/conf/nginx.conf](https://raw.githubusercontent.com/ChristofSchwarz/qsefw_nginx/master/conf/nginx.conf) file and overwrite the default file in your local installation on `C:\nginx\conf\nginx.conf`
 
 ## Run NGINX from Command Prompt
 
