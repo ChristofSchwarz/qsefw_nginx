@@ -9,8 +9,8 @@ than 443, as a route.
 
 <center><img src="https://github.com/ChristofSchwarz/pics/raw/master/nginx.png" width="530"/></center>
 
-By default, port 443 is taken by Qlik Sense Proxy Service already, so we have to move it to another port. We can also enable 
-http traffic internally between NGINX and Qlik Sense.
+By default, the https port 443 is taken by Qlik Sense Proxy Service already, so we have to move it to another port. We can 
+also enable http traffic internally between NGINX and Qlik Sense.
 
 Follow these steps
  - Log into Qlik Sense QMC, Proxies settings on http://localhost/qmc/proxies
