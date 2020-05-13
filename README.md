@@ -3,8 +3,9 @@
 NGINX (pronounced "Engine X") is a web server and reverse proxy, load balancer and more. NGINX is free and open-source 
 software and has become extremely popular. In Feb 2020, estimated Netcraft, NGIX served over 36% of all active websites (!!).
 
-We will use it "in front of" our Windows Qlik Sense Server to expose other services (maybe a self-written one or Qlik's
-QPS API), which typically run on other ports than 443, as a route.
+We will use it "in front of" our Windows Qlik Sense Server to expose other services (maybe a self-written one like my Qlik
+Sense LDAP Login https://github.com/ChristofSchwarz/qsefw_ldap_login or Qlik's QPS API), which typically run on other ports 
+than 443, as a route.
 
 By default, port 443 is taken by Qlik Sense Proxy Service already, so we have to move it to another port. We can also enable 
 http traffic internally between NGINX and Qlik Sense.
