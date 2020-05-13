@@ -46,7 +46,7 @@ don't need NSSM again.
 - Execute this command: `C:\nginx\nssm\nssm.exe install`
 - Set the parameters on the first page of NSSM. The other settings can be as default or change if you know what you are doing.
 <img src="https://github.com/ChristofSchwarz/pics/raw/master/nssm.png" width="440"/>
-- Use the "Services" window to start the new NGINX service or simply type `net start "NGINX"` from your open command prompt
+- Use the "Services" window to start the new NGINX service or simply type `net start NGINX` from your open command prompt
 
 ### uninstalling NGINX service
 
