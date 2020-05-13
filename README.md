@@ -64,7 +64,14 @@ certificates server.pem and server_key.pem that Qlik Sense has created during in
 Note: It is not necessary to introduce a separate Virtual Proxy to have a main parent path after the host name in your url.
 
 
-## Secure API route with basic authentication
+## Exposing QPS API on https as route /api/qps
+
+The QPS API of Qlik Sense listens to port 4243 and requires the Client Certificate (client.pem) and Client Certificate Key 
+(client_key.pem) to be presented. Both, the port and the availability of the certificate files, can be a burden. With the 
+help of NGINX we are going to present the certificates internally, while the QPS API itself will be exposed under the route
+/api/qps on the default https port 443.
+
+### Secure route /api/qps with basic authentication
 
 NGINX is able to secure certain paths for which it is proxy. We would like to expose Qlik's QPS API under route /api/qps but 
 use at least a basic authentication with username+password. See https://docs.nginx.com/nginx/admin-guide/security-controls/configuring-http-basic-authentication/
@@ -72,4 +79,30 @@ use at least a basic authentication with username+password. See https://docs.ngi
 Copy the [userpasswords.txt](conf/userpasswords.txt) file to your `C:\nginx\conf` folder. It contains already one user "api1" + 
 password "Qlik1234" which you should change to another combination. You can create line entries using the [Online htpassword Generator](https://www.web2generators.com/apache-tools/htpasswd-generator)
 
+### Example: Request Ticket for User using route /api/qps
 
+Here we are using the route and we post the Basic Authentication encoded as Base64 Bit ... to get the encoded combination
+for your apiuser and password, open for example the Browser Console with F12 and type `btoa("api1:Qlik1234")` .. you will get 
+`YXBpMTpRbGlrMTIzNA==`. 
+
+The simpliest call to QPS API is a GET "about"
+```
+curl --location --request GET 'https://qmi-qs-sn/api/qps/about/description?xrfkey=1234567890123456' \
+--header 'X-Qlik-Xrfkey: 1234567890123456' \
+--header 'Authorization: Basic YXBpMTpRbGlrMTIzNA==' \
+```
+
+This is a POST call to get a ticket
+
+```
+curl --location --request POST 'https://qmi-qs-sn/api/qps/ticket?xrfkey=0123456789ABCDEF' \
+--header 'X-Qlik-Xrfkey: 0123456789ABCDEF' \
+--header 'X-Qlik-User: UserDirectory=Internal;UserId=sa_proxy' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Basic YXBpMTpRbGlrMTIzNA==' \
+--data-raw '{
+  "UserDirectory": "DOMAIN",
+  "UserId": "myuser",
+  "Attributes": []
+}'
+```
