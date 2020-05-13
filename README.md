@@ -42,18 +42,19 @@ An amazingly light-weight executeable that you run **once** in order to register
 a Windows Service. After you do that, you will be able to start/stop and auto-start NGINX as a Service and
 don't need NSSM again.
 
-- Download nssm.exe from http://nssm.cc and save the Win64 version of nssm.exe somewhere in the nginx folder e.g. in `C:\nginx\nssm\nssm.exe` (alternatively get the Win64 version straight from [this repository](https://github.com/ChristofSchwarz/qsefw_nginx/raw/master/nssm/nssm.exe))
-- Run an elevated Command Prompt (run as Administrator) 
-- Execute this command: `C:\nginx\nssm\nssm.exe install`
-- Set the parameters on the first page of NSSM. The other settings can be as default or change if you know what you are doing.
-<img src="https://github.com/ChristofSchwarz/pics/raw/master/nssm.png" width="440"/>
-- Use the "Services" window to start the new NGINX service or simply type `net start NGINX` from your open command prompt
+ - Download nssm.exe from http://nssm.cc and save the Win64 version of nssm.exe somewhere in the nginx folder e.g. in `C:\nginx\nssm\nssm.exe` (alternatively get the Win64 version straight from [this repository](https://github.com/ChristofSchwarz/qsefw_nginx/raw/master/nssm/nssm.exe))
+ - Run an elevated Command Prompt (run as Administrator) 
+ - Execute this command: `C:\nginx\nssm\nssm.exe install`
+ - Set the parameters on the first page of NSSM. The other settings can be as default or change if you know what you are doing.
+<img src="https://github.com/ChristofSchwarz/pics/raw/master/nssm.png" width="440">
+
+ - Use the "Services" window to start the new NGINX service or simply type `net start NGINX` from your open command prompt
 
 ### uninstalling NGINX service
 
-- Run an elevated Command Prompt (run as Administrator)
-- Stop the NGINX Service in Windows or type `net stop "NGINX"` in the command prompt
-- Execute this command: `C:\nginx\nssm\nssm.exe remove NGINX`
+ - Run an elevated Command Prompt (run as Administrator)
+ - Stop the NGINX Service in Windows or type `net stop "NGINX"` in the command prompt
+ - Execute this command: `C:\nginx\nssm\nssm.exe remove NGINX`
 
 ## Understand the settings for Qlik Sense on Windows
 
